@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledWrapper = styled.div`
+export const Container = styled.div`
   height: 100vh;
 
   display: flex;
@@ -13,7 +13,7 @@ export const StyledWrapper = styled.div`
   background-color: ${p => p.theme.colors.background};
 `;
 
-export const StyledContainer = styled.div`
+export const Wrapper = styled.div`
   width: 400px;
   padding: ${p => p.theme.spacing(5)};
 
@@ -27,6 +27,6 @@ export const StyledContainer = styled.div`
   }
 `;
 
-export const StyledContactsBox = styled.div`
+export const Section = styled.div`
   margin-top: ${p => p.theme.spacing(8)};
 `;

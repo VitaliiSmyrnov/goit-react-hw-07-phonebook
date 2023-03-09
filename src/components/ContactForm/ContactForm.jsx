@@ -1,19 +1,19 @@
-import { nanoid } from 'nanoid';
 import { toast } from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContacts, addContact } from 'redux/contactsSlice';
+import { addContact } from 'redux/operations';
+import { selectContacts } from 'redux/selectors';
 import { StyledButton, StyledForm } from './ContactForm.styled';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
-
+  const contacts = useSelector(selectContacts);
+ 
   const handleFormSubmit = e => {
     e.preventDefault();
+
     const form = e.target;
     const name = form.elements.name.value;
-    const number = form.elements.number.value;
-    const id = nanoid(5);
+    const phone = form.elements.phone.value;
 
     const isExistName = contacts
       .map(contact => contact.name.toLowerCase())
@@ -21,9 +21,7 @@ export const ContactForm = () => {
 
     const message = `${name} is already in contacts`;
 
-    isExistName
-      ? toast.error(message)
-      : dispatch(addContact({ id, name, number }));
+    isExistName ? toast.error(message) : dispatch(addContact({ name, phone }));
 
     form.reset();
   };
@@ -44,7 +42,7 @@ export const ContactForm = () => {
         Number
         <input
           type="tel"
-          name="number"
+          name="phone"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
