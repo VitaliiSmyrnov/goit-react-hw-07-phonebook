@@ -3,6 +3,35 @@ import styled from 'styled-components';
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
+
+  label {
+    margin-top: ${p => p.theme.spacing(2)};
+    color: ${p => p.theme.colors.label};
+  }
+
+  input {
+    margin-top: ${p => p.theme.spacing(1)};
+
+    display: inline-block;
+    width: 250px;
+    height: ${p => p.theme.spacing(4.5)};
+    padding: ${p => p.theme.spacing(1)};
+    line-height: ${p => p.theme.lineHeights.body};
+
+    color: #efefef;
+    background-color: #202223;
+
+    border: ${p => p.theme.borders.normal} ${p => p.theme.colors.border};
+    border-radius: ${p => p.theme.radii.normal};
+
+    transition: border linear 0.2s, box-shadow linear 0.2s;
+  }
+
+  input:focus {
+    border: ${p => p.theme.borders.normal} ${p => p.theme.colors.borderAccent};
+    outline: none;
+    box-shadow: ${p => p.theme.shadows.input};
+  }
 `;
 
 export const StyledButton = styled.button`
@@ -12,9 +41,9 @@ export const StyledButton = styled.button`
   gap: ${p => p.theme.spacing(1)};
 
   margin-right: auto;
-  margin-top: ${p => p.theme.spacing(3)};
+  margin-top: ${p => p.theme.spacing(4)};
 
-  font-size: ${p => p.theme.fontSizes.xs};
+  font-size: ${p => p.theme.fontSizes.sm};
   text-align: center;
   min-width: 90px;
 
@@ -26,13 +55,14 @@ export const StyledButton = styled.button`
   border: ${p => p.theme.borders.none};
   border-radius: ${p => p.theme.radii.normal};
   background-color: ${p => p.theme.colors.background};
+
   transition: background-color ${p => p.theme.transitions.normal};
+
+  box-shadow: ${p => p.theme.shadows.normal}, ${p => p.theme.shadows.button};
+  cursor: pointer;
 
   :hover,
   :focus {
-    background-color: ${p => p.theme.colors.accent};
+    background-color: ${p => p.theme.colors.backgroundLight};
   }
-
-  box-shadow: ${p => p.theme.shadows.normal};
-  cursor: pointer;
 `;

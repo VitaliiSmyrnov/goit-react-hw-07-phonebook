@@ -7,7 +7,7 @@ export const StyledButton = styled.button`
   gap: ${p => p.theme.spacing(1)};
 
   font-size: ${p => p.theme.fontSizes.xs};
-  min-width: 90px;
+  min-width: 60px;
   text-align: center;
 
   padding-left: ${p => p.theme.spacing(4)};
@@ -18,13 +18,14 @@ export const StyledButton = styled.button`
   border: ${p => p.theme.borders.none};
   border-radius: ${p => p.theme.radii.normal};
   background-color: ${p => p.theme.colors.background};
+
   transition: background-color ${p => p.theme.transitions.normal};
+
+  box-shadow: ${p => p.theme.shadows.normal}, ${p => p.theme.shadows.button};
+  cursor: pointer;
 
   :hover,
   :focus {
-    background-color: ${p => p.theme.colors.accent};
+    background-color: ${p => p.theme.colors.backgroundLight};
   }
-
-  box-shadow: ${p => p.theme.shadows.normal};
-  cursor: pointer;
 `;

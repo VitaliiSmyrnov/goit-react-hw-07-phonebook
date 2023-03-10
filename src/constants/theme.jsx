@@ -2,15 +2,12 @@ export const theme = Object.freeze({
   colors: {
     white: '#fff',
     black: '#000',
-    text: '#2a2a2a',
-    lightText: '#686868',
-    background: '#c1c1c1',
-    backgroundLight: '#e3e3e3',
-    primary: '#07c',
-    secondary: '#add8e6',
-    accent: '#ff6347',
-    muted: '#f6f6f6',
-    border: '#c1c1c1',
+    background: '#37393c',
+    backgroundLight: '#646464',
+    header: '#43d7ff',
+    label: '#b6daff',
+    border: '#a4a4a4',
+    borderAccent: '#97b7d9',
   },
   spacing: value => `${4 * value}px`,
   fonts: {
@@ -50,5 +47,8 @@ export const theme = Object.freeze({
   shadows: {
     normal: `1px 4px 6px 0 rgba(0, 0, 0, 0.16), 0 4px 4px 0 rgba(0, 0, 0, 0.06),
     0 1px 1px 0 rgba(0, 0, 0, 0.12)`,
+    input: `inset 0 2px 4px rgba(0, 0, 0, 0.5),
+    0 0 8px rgba(151, 183, 217, 0.6)`,
+    button: `inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05)`,
   },
 });
