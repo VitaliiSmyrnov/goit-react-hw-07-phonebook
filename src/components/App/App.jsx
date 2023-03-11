@@ -26,13 +26,15 @@ export const App = () => {
           <h2>Contacts</h2>
           <Filter />
           {isLoading && <p>Request in progress...</p>}
+
+          {contacts.length > 0 && <ContactList />}
+
+          {contacts.length === 0 && !error && !isLoading && (
+            <Message>You don't have contacts yet.</Message>
+          )}
+
           {error && (
             <Message>Oops, something went wrong. Reload the page</Message>
-          )}
-          {contacts.length > 0 ? (
-            <ContactList />
-          ) : (
-            <Message>You don't have contacts yet.</Message>
           )}
         </Section>
       </Wrapper>
